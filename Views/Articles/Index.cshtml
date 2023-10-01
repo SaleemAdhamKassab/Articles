@@ -1,0 +1,71 @@
+﻿@model IEnumerable<ArticleDetailesViewModel>
+
+@{
+    ViewData["Title"] = "Articles";
+}
+
+<h4 style=" text-align: center;">Articles</h4>
+<div class="justify-content-center">
+    <a class="btn btn-outline-primary mb-1" asp-action="Create">Create New</a>
+    <form method="get" asp-action="Search">
+        <div class="row">
+            <div class="input-group mb-3">
+                <input type="search" name="title" class="form-control input-text" placeholder="Search Articles....">
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-outline-warning"><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Author)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Image)
+            </th>
+            <th>
+                Publish Date
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Author)
+                </td>
+                <td>
+                    <img src="~/images/articles/@item.Image" width="40" height="37">
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    <div style="float:right">
+                        <a asp-action="Edit" asp-route-id="@item.Id"><i class="fa fa-edit" style="margin-right:10px; color:slateblue"></i></a>
+                        <a asp-controller="Home"  asp-action="Details" asp-route-id="@item.Id"><i class="fa fa-info" style="margin-right:10px; color:mediumaquamarine"></i></a>
+                        <a asp-action="Delete" asp-route-id="@item.Id"><i class="fa fa-trash" style="color:red"></i></a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

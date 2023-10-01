@@ -1,0 +1,54 @@
+﻿@model ProfileformViewModel;
+
+@{
+    ViewData["Title"] = $"Edit {Model.FirstName} Profile";
+}
+<h4 style=" text-align: center;">Edit @Model.FirstName</h4>
+<hr />
+<form asp-action="Edit" method="post" class="mb-3">
+
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-floating mb-3">
+        <input asp-for="FirstName" class="form-control" autocomplete="firstName" aria-required="true" placeholder="First Name" />
+        <label asp-for="FirstName">FirstName</label>
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+    <div class="form-floating mb-3">
+        <input asp-for="LastName" class="form-control" autocomplete="LastName" aria-required="true" placeholder="LastName" />
+        <label asp-for="LastName">LastName</label>
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+    <div class="form-floating mb-3">
+        <input asp-for="Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
+        <label asp-for="Email">Email</label>
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div class="form-floating mb-3">
+        <input asp-for="Bio" class="form-control" autocomplete="Bio" aria-required="true" placeholder="Bio" />
+        <label asp-for="Bio">Bio</label>
+        <span asp-validation-for="Bio" class="text-danger"></span>
+    </div>
+    <div class="form-floating mb-3">
+        <input asp-for="Facebook" class="form-control" autocomplete="Facebook" aria-required="true" placeholder="Facebook" />
+        <label asp-for="Facebook">Facebook</label>
+        <span asp-validation-for="Facebook" class="text-danger"></span>
+    </div>
+    <div class="form-floating mb-3">
+        <input asp-for="Instagram" class="form-control" autocomplete="Instagram" aria-required="true" placeholder="Instagram" />
+        <label asp-for="Instagram">Instagram</label>
+        <span asp-validation-for="Instagram" class="text-danger"></span>
+    </div>
+    <div class="form-floating mb-3">
+        <input asp-for="Twiter" class="form-control" autocomplete="Twiter" aria-required="true" placeholder="Twiter" />
+        <label asp-for="Twiter">Twiter</label>
+        <span asp-validation-for="Twiter" class="text-danger"></span>
+    </div>
+    <button id="registerSubmit" type="submit" class="btn btn-lg btn-primary d-block mt-4">Save</button>
+</form>
+<div>
+    <a asp-action="Index">Back to Users</a>
+</div>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

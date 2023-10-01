@@ -1,0 +1,40 @@
+﻿@model EditArticleViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h4 style=" text-align: center;">Edit @Model.Title Article</h4>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group mb-2">
+                <input asp-for="Category" class="form-control" disabled />
+            </div>
+            <div class="form-group mb-2">
+                <input asp-for="Title" class="form-control" placeholder="Title" required />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <textarea asp-for="Content" class="form-control" rows="9" placeholder="Content" required></textarea>
+                <span asp-validation-for="Content" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary mb-3" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to Articles</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

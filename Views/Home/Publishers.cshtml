@@ -1,0 +1,45 @@
+﻿@model IEnumerable<PublisherViewModel>
+
+@{
+    ViewData["Title"] = "Publishers";
+}
+<div class="container">
+    <div class="row">
+        <form method="get" asp-controller="Home" asp-action="SearchPublishers">
+            <div class="row">
+                <div class="input-group mb-3">
+                    <input type="search" name="publisher" class="form-control input-text" placeholder="Search Publishers....">
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-outline-warning"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="row">
+        @foreach (PublisherViewModel publisher in Model)
+        {
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    @if (@publisher.ProfilePicture != null)
+                    {
+                        <img class="card-img-top" src="~/images/UserProfilePictures/@publisher.ProfilePicture" alt="Card image cap" height="175px">
+                    }
+                    else
+                    {
+                        <img class="card-img-top" src="~/images/UserProfilePictures/defaultProfilePicture.png" alt="Card image cap" height="175px">
+                    }
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-center mb-1"> @(publisher.FirstName + ' ' + @publisher.LastName)</h5>
+                        <p class="title">@publisher.Bio</p>
+                        <a href="@publisher.Facebook"><i class="fa fa-facebook" style="margin-right:10px"></i></a>
+                        <a href="@publisher.Twiter"><i class="fa fa-twitter" style="margin-right:10px"></i></a>
+                        <a href="@publisher.Instagram"><i class="fa fa-instagram"></i></a>
+
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
