@@ -8,8 +8,8 @@ namespace ArticlesProject.Services
     {
         public async Task SendEmailAsync(string email, string subject, string htmlMessage)
         {
-            var fromMail = "e.s.a.kassab@gmail.com";
-            var fromPassword = "ahebazxvqscqkzfb";
+            var fromMail = "Your Email";
+            var fromPassword = "Password";
 
             //Email To Send
             var message = new MailMessage();
