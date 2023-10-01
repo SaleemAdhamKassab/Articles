@@ -24,11 +24,11 @@ Users can have one or more roles, so they can access any Modules based on their 
  Manage Users<br /> 
 
 Technologies:<br /> 
-Asp.Net Core MVC<br /> 
-Microsoft SQL Server<br /> 
-Microsoft Identity<br /> 
+ Asp.Net Core MVC<br /> 
+ Microsoft SQL Server<br /> 
+ Microsoft Identity<br /> 
 
 Demo Link:
-https://drive.google.com/file/d/1dPclxvHBGmG-w-dfAtax6Bl3e0l9h3nB/view?usp=sharing
+ https://drive.google.com/file/d/1dPclxvHBGmG-w-dfAtax6Bl3e0l9h3nB/view?usp=sharing
 
 Thank you
