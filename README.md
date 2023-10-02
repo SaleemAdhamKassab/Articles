@@ -1,5 +1,6 @@
 # ArticlesProject
-The Articles site provides useful features for publishing articles. Anyone is able to register a new account and start writing and publishing his articles after activating his account via email.
+Provides a service to search across a wide variety of disciplines and sources: articles, theses, ... <br />
+publishers can register on the site and publish their articles in a professional way.
 
 Users can have one or more roles, so they can access any Modules based on their granted permissions as below:
 1.	Anonymous:
